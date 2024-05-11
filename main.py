@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
-
 # get dataset
 data = pd.read_csv('priceandsize.csv')
 data.head()
@@ -28,13 +27,13 @@ def main():
     
     # Predict price
     predicted_price = predict_price(size_input)
-    print(f"Predicted price for your house with size {size_input} Square meters: rial{predicted_price:.2f}")
+    print(f"Predicted price for your house with size {size_input} Square meters: ${predicted_price:.2f}")
 
     # Visualize the dataset and regression line
     plt.scatter(X, y, color='green', label='Original data')
     plt.plot(X, model.predict(X), color='yellow', label='Linear regression')
     plt.xlabel('Size (Square meters)')
-    plt.ylabel('Price (rial)')
+    plt.ylabel('Price ($)')
     plt.title('Predict House Price')
     plt.show()
     plt.legend()
